@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class BigNumber {
   BigInt _value = BigInt.zero;
   int _numberOfFractionDigits = 0;
@@ -13,5 +15,9 @@ class BigNumber {
 
   static int _numberIntOfDigits(int num) {
     return num.toString().length;
+  }
+
+  double toDouble() {
+    return _value.toDouble() / pow(10, _numberOfFractionDigits);
   }
 }
